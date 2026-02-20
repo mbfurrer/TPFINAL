@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { ContactContext } from '../../Context/ContactContext'
 import { Link } from 'react-router'
-import { getContacts } from '../../services/contactsService'
+import { getContacts } from '../../services/contactService'
 
 
 export default function ContactSideBar() {
