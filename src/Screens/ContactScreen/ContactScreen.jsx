@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import ContactSideBar from '../../Components/ContactSideBar/ContactSideBar'
 import { useParams } from 'react-router'
 import { ContactContext } from '../../Context/ContactContext'
+import './ContactScreen.css'
 
 export default function ContactScreen() {
   const {contacts} = useContext (ContactContext)
@@ -9,8 +10,8 @@ export default function ContactScreen() {
   const contact_selected = contacts.find (contact => Number(contact.id) === Number(contact_id))
 
   return (
-    <div>
-      <ContactSideBar/> {
+    <div className='contact-message-container'>
+      <ContactSideBar/>{
         ! contact_selected
         ? <div>
           <h1>El contacto seleccionado no existe</h1>
@@ -35,10 +36,12 @@ export default function ContactScreen() {
                 )
               })}            
           </div>
+          
           <form>
             <textarea placeholder="Escribe un mensaje..."/>
             <button type='submit'>Enviar</button>
           </form>
+
     </div>
     }
     </div>

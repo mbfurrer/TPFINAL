@@ -1,10 +1,16 @@
 import React from 'react'
 import ContactSideBar from '../../Components/ContactSideBar/ContactSideBar'
+import './HomeScreen.css'
 
 export default function HomeScreen() {
     return (
-        <div>
+        <div className='home-containter'>
+            <div className='contact-sidebar'>
             <ContactSideBar />
+            </div>
+            <div className='message-sidebar'>
+                <p>Selecciona un chat</p>
+            </div>
         </div>
     )
 }

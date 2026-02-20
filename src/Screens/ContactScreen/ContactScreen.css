@@ -1,0 +1,5 @@
+.contact-message-container{
+    display: flex;
+    background-color: rgb(172, 203, 184);
+    gap: 20px;
+}

@@ -1,0 +1,17 @@
+.home-containter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.contact-sidebar{
+    background-color: antiquewhite;
+    flex: 1;
+
+}
+
+.message-sidebar{
+    background-color: aquamarine;
+    flex: 3;
+}
