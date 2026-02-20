@@ -17,21 +17,19 @@ export default function ContactScreen() {
           <h1>El contacto seleccionado no existe</h1>
           </div>
           
-        : <div>
-          <h1>El contacto seleccionado es: {contact_selected.name}</h1>
+        : <div className='message-sidebar'>
+          <div className='message-header'>
+            <img src={contact_selected.profile_picture} alt={contact_selected.name}/>
+            <h1>{contact_selected.name}</h1>
+          </div>
             <div> 
             {
             contact_selected.messages.map(message => {
               return (
-                <div key={message.id}>
-                  {
-                  message.send_by_me
-                  ? <h3>Enviado por mi</h3>
-                  : <h3>Enviado por: {contact_selected.name}</h3>
-                  }
+                <div key={message.id} 
+                className={`message ${message.send_by_me ? "mine" : "other"}`}>
                   <p>{message.text}</p>
-                  <span>{message.time}</span>
-                  <hr />
+                  <span>{message.created_at}</span>
                 </div>
                 )
               })}            

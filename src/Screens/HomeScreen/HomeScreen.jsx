@@ -9,7 +9,7 @@ export default function HomeScreen() {
             <ContactSideBar />
             </div>
             <div className='message-sidebar'>
-                <p>Selecciona un chat</p>
+                <p>Comienza un chat</p>
             </div>
         </div>
     )

@@ -2,15 +2,15 @@ import React, { useContext } from 'react'
 import { ContactContext } from '../../Context/ContactContext'
 import { Link } from 'react-router'
 import { getContacts } from '../../services/contactService'
-
+import './ContactSideBar.css'
 
 export default function ContactSideBar() {
 
     const {contacts, favorite_name} = useContext(ContactContext)
     
     return (
-    <div>
-        <h2>Whatsapp Clone</h2>
+    <div className='contact-sidebar-column'>
+        <h2>Whatsapp</h2>
         <h3>Me cae muy bien: {favorite_name}</h3>
         <div>{
             contacts.map(

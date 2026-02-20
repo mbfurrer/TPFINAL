@@ -31,6 +31,7 @@ const contacts = [
                 id: 1,
                 text: 'Holaaa',
                 send_by_me: true, 
+                created_at: '2024-06-01T12:05:00Z',
                 is_read: true
             },
             {
@@ -51,7 +52,8 @@ const contacts = [
             {
                 id: 1,
                 text: 'Holaaa',
-                send_by_me: true, 
+                send_by_me: true,
+                created_at: '2024-06-01T12:05:00Z', 
                 is_read: true
             },
             {

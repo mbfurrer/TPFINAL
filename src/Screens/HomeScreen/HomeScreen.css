@@ -1,17 +1,26 @@
+:root{
+    --color-primario-100: #ffffff;
+    --color-primario-200: #f7f5f2;
+    --color-primario-300: #f5f5f5;
+    --color-primario-400:#d8fcd2;
+    --color-primario-500: #1bab61;
+    --color-primario-600:#15613f;
+}
+
 .home-containter{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .contact-sidebar{
-    background-color: antiquewhite;
+    background-color: white;
     flex: 1;
-
 }
 
 .message-sidebar{
-    background-color: aquamarine;
+    background-color: var(--color-primario-200);
     flex: 3;
 }
