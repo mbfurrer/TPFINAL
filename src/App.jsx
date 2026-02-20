@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { Route, Routes } from 'react-router'
 import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import ContactScreen from './Screens/ContactScreen/ContactScreen'
