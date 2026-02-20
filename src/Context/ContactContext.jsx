@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { getContacts } from "../services/contactsService";
+import { getContacts } from "../services/contactService";
 
 
 
