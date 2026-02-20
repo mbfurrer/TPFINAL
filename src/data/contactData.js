@@ -8,13 +8,20 @@ const contacts = [
             {
                 id: 1,
                 text: 'Hola Mica, le diste de comer al perro ya?',
-                send_by_me: true, 
+                send_by_me: false, 
                 created_at: '2024-06-01T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
                 text: 'Si, ya comio ma',
+                send_by_me: true,
+                created_at: '2024-06-01T12:05:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Gracias, por favor compra bananas cuando vuelvas',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
                 is_read: false
@@ -23,52 +30,73 @@ const contacts = [
     },
     {
         id: 2,
-        name: 'Pepe',
+        name: 'Juan UNT',
         last_time_connection: 'Hace 3 horas',
         profile_picture: 'https://www.clarin.com/img/2022/01/20/GWR2-6fo__1256x620__1.jpg',
         messages: [
             {
                 id: 1,
-                text: 'Holaaa',
+                text: 'Holaaa, como venis con el tp?',
                 send_by_me: true, 
                 created_at: '2024-06-01T12:05:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Bien yo estoy',
+                text: 'Hola! Estoy en el horno jajaja',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'XD same',
+                send_by_me: true,
+                created_at: '2024-06-01T12:05:00Z',
+                is_read: true
             }
         ]
     }, 
     {
         id: 3,
-        name: 'Juan',
+        name: 'Cata',
         last_time_connection: 'Hace 20 minutos',
         profile_picture: 'https://www.clarin.com/img/2022/01/20/GWR2-6fo__1256x620__1.jpg',
         messages: [
             {
                 id: 1,
-                text: 'Holaaa',
+                text: 'Hola buenas',
                 send_by_me: true,
                 created_at: '2024-06-01T12:05:00Z', 
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Bien yo estoy',
+                text: 'Hola, como va?',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             }, 
             {
                 id: 3,
-                text: 'oki',
+                text: 'bien bien, vas a ir a la fiesta de Juan?',
+                send_by_me: true,
+                created_at: '2024-06-01T12:05:00Z',
+                is_read: true
+            },
+            {
+                id: 4,
+                text: 'Sii, vamos juntas? ',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
+            },
+            {
+                id: 5,
+                text: 'dale!',
+                send_by_me: true,
+                created_at: '2024-06-01T12:05:00Z',
+                is_read: true
             }
         ]
     }
