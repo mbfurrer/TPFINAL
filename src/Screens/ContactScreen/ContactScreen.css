@@ -19,11 +19,10 @@
     display: flex;
 } 
 
-.message-sidebar {
-    background-color: wheat;
+/* .message-sidebar {
     border-left: 1px solid #ccc;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .message-header {
     display: flex;

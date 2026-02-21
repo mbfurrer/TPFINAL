@@ -52,8 +52,6 @@ export default function ContactSideBar() {
                             </div>
                         </div>
                         </div>
-                        <br />
-                        <hr />
                         </Link>
                     )
                 }
