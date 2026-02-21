@@ -1,0 +1,27 @@
+.messages-container{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.message {
+    width: fit-content;
+    max-width: 60%;
+    padding: 8px 12px;
+    margin: 5px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    flex-direction: column;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.mine {
+    background-color: #d1f7c4;
+    align-self: flex-end;
+}
+
+.other {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}

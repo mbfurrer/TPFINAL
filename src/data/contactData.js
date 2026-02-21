@@ -30,7 +30,7 @@ const contacts = [
     },
     {
         id: 2,
-        name: 'Juan UNT',
+        name: 'Juan UTN',
         last_time_connection: 'Hace 3 horas',
         profile_picture: 'https://www.clarin.com/img/2022/01/20/GWR2-6fo__1256x620__1.jpg',
         messages: [
