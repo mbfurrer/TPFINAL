@@ -13,11 +13,15 @@ const NewMessagesForm = ({contact_id}) => {
     }
 
     return (
-        <div>
+        <div className='chat-area'>
         <form onSubmit={handleSubmitNewMessage} className="chat-input">
+            <div className="input-wrapper">
             <label htmlFor='nuevo-mensaje'></label>
             <textarea placeholder="Escribe un mensaje..." id='nuevo_mensaje' name='nuevo_mensaje' rows={1} />
-            <button type='submit'>Enviar</button>
+            <button type='submit'>
+                <i className="bi bi-send-fill"></i>
+            </button>
+            </div>
         </form>
         </div>
     )
