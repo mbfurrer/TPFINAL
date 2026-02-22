@@ -1,12 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ContactContext } from '../../Context/ContactContext'
 import { Link } from 'react-router'
-import { getContacts } from '../../services/contactService'
 import './ContactSideBar.css'
 
-export default function ContactSideBar({ chats, filter, setFilter }) {
+export default function ContactSideBar({ chats = [], filter, setFilter }) {
+  
+  const [searchTerm, setSearchTerm] = useState("")
+  const displayedChats = chats.filter(chat =>
+  chat.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
-  const { contacts } = useContext(ContactContext)
   
   return (
 
@@ -26,6 +29,8 @@ export default function ContactSideBar({ chats, filter, setFilter }) {
         <input
           type="text"
           placeholder="Search or start a new chat"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
 
@@ -55,7 +60,7 @@ export default function ContactSideBar({ chats, filter, setFilter }) {
       </div>
 
       <div>{
-        chats.map(
+        displayedChats.map(
           (chat) => {
 
             const lastMessage =
@@ -86,7 +91,7 @@ export default function ContactSideBar({ chats, filter, setFilter }) {
 
                     <div className="bottom-row">
                       <p>
-                        {lastMessage?.send_by_me ? "Tú" : ""} 
+                        {lastMessage?.send_by_me ? "Tú: " : ""} 
                         {lastMessage?.text}
                       </p>
 
@@ -100,9 +105,7 @@ export default function ContactSideBar({ chats, filter, setFilter }) {
                 </div>
               </Link>
             )
-          }
-        )
-      }
+          })}
       </div>
     </div>
   )

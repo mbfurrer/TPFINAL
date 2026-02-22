@@ -61,9 +61,6 @@ export default function ContactScreen() {
                 </span>
               </div>
             </div>
-
-
-
             <div className='chat-screen'>
               <Messages contact_selected={contact_selected} />
               <NewMessagesForm contact_id={contact_id} />
