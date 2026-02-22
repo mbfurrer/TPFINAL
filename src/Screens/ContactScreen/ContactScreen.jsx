@@ -5,6 +5,7 @@ import { ContactContext } from '../../Context/ContactContext'
 import './ContactScreen.css'
 import NewMessagesForm from '../../Components/NewMessageForm/NewMessageForm'
 import Messages from '..//../Components/Messages/Messages'
+import OptionSideBar from '../../Components/OptionSideBar/OptionSideBar'
 
 export default function ContactScreen() {
   const { contacts } = useContext(ContactContext)
@@ -13,18 +14,24 @@ export default function ContactScreen() {
 
   return (
     <div className='contact-message-container'>
-      <ContactSideBar />{
+      <div>
+        <OptionSideBar />
+      </div>
+
+      <ContactSideBar/>{
         !contact_selected
           ? <div>
             <h1>El contacto seleccionado no existe</h1>
           </div>
 
           : <div className='message-sidebar'>
+
             <div className='message-header'>
               <img
                 className='avatar'
                 src={contact_selected.profile_picture}
                 alt={contact_selected.name} />
+
               <div className="header-info">
                 <h1>{contact_selected.name}</h1>
                 <span className="last-seen">
@@ -32,8 +39,9 @@ export default function ContactScreen() {
                 </span>
               </div>
             </div>
-            <Messages contact_selected = {contact_selected}/>
-            <NewMessagesForm contact_id = {contact_id}/>
+
+            <Messages contact_selected={contact_selected} />
+            <NewMessagesForm contact_id={contact_id} />
           </div>
       }
     </div>

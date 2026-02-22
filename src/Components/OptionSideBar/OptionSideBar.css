@@ -1,0 +1,40 @@
+.options-sidebar {
+    background-color: var(--wpbg-200);
+    height: 100vh;
+    border-right: 1px solid var(--wp-ichs-95);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    width: 80px;
+    gap: 25px;
+}
+
+.options-sidebar button {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+.options-sidebar button:hover {
+    background-color: var(--wp-ichs-95);
+}
+
+i {
+    font-size: 22px;
+    color: var(--wp-ichs-200);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+i:hover {
+    color: var(--wp-ichs-500);
+}

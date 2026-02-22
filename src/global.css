@@ -1,7 +1,65 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+:root {
+    --wpbg-100: #ffffff;
+    --wpbg-200: #f7f5f2;
+    --wpbg-300: #d1d7db;
+
+
+    --wp-green-100: #d8fcd2;
+    --wp-green-200: #c7f3be;
+    --wp-green-300: #017561;
+    --wp-green-400: #1dab62;
+
+
+    --wp-ichs-90: #e9edef;
+    --wp-ichs-95: #ebeae8;
+    --wp-ichs-100: #ccc;
+    --wp-ichs-200: #54656f;
+    --wp-ichs-300: #667781;
+    --wp-ichs-500: #111b21;
+    --wp-ichs-600: black;
+
+
+
+    --color-primario-300: #f5f5f5;
+    --color-primario-500: #1bab61;
+    --color-primario-600: #15613f;
+
+    --color-primario-100: #ffffff;
+    --color-primario-200: #f7f5f2;
+    --color-primario-300: #f5f5f5;
+    --color-primario-400: #d8fcd2;
+    --color-primario-500: #1bab61;
+    --color-primario-600:
 }
