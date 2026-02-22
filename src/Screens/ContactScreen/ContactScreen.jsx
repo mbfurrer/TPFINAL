@@ -18,7 +18,7 @@ export default function ContactScreen() {
         <OptionSideBar />
       </div>
 
-      <ContactSideBar/>{
+      <ContactSideBar />{
         !contact_selected
           ? <div>
             <h1>El contacto seleccionado no existe</h1>
@@ -40,8 +40,8 @@ export default function ContactScreen() {
               </div>
             </div>
 
-            <Messages contact_selected={contact_selected} />
-            <NewMessagesForm contact_id={contact_id} />
+              <Messages contact_selected={contact_selected} />
+              <NewMessagesForm contact_id={contact_id} />
           </div>
       }
     </div>

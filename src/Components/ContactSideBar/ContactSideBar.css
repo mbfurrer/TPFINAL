@@ -1,3 +1,10 @@
+.contact-sidebar-column{
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
 .logo-container {
     padding: 10px;
     display: flex;

@@ -3,7 +3,7 @@ import "./WelcomeSideBar.css"
 
 export default function WelcomeSideBar() {
     return (
-        <div>
+        <div className='welcome-container'>
             <div className='download-card'>
                 <i class="bi bi-cloud-download"></i>
                 <h1>Download WhatsApp for Windows</h1>

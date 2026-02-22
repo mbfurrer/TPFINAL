@@ -1,6 +1,10 @@
 .chat-area {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
 }
 
 .chat-input {
@@ -13,7 +17,7 @@
     border-radius: 25px;
     border-radius: 25px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    background: white;
+    background: var(--wpbg-100);
 }
 
 .input-wrapper textarea {
@@ -35,8 +39,7 @@
     height: 36px;
     border-radius: 50%;
     border: none;
-    background-color: #25D366;
-    color: white;
+    color: var(--wpbg-100);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +48,7 @@
 }
 
 .chat-input button:hover {
-    background-color: #1ebe5d;
+    background-color: var(--wp-green-400);
 }
 
 .input-wrapper i {
