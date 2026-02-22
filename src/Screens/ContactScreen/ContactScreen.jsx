@@ -12,13 +12,35 @@ export default function ContactScreen() {
   const { contact_id } = useParams()
   const contact_selected = contacts.find(contact => Number(contact.id) === Number(contact_id))
 
+  const chats = [...contacts]
+
+  const [filter, setFilter] = React.useState("all")
+  let filteredChats = chats
+
+  if (filter === "unread") {
+    filteredChats = chats.filter(chat =>
+      chat.messages.some(msg => !msg.is_read && !msg.send_by_me)
+    )
+
+  } else if (filter === "favorites") {
+    filteredChats = chats.filter(chats => chats.favorite)
+  
+  } else if (filter === "groups") {
+    filteredChats = chats.filter(chat => chat.type === "group")
+  }
+
+
   return (
     <div className='contact-message-container'>
       <div>
         <OptionSideBar />
       </div>
 
-      <ContactSideBar />{
+      <ContactSideBar
+        chats={filteredChats} 
+        filter={filter}
+        setFilter={setFilter}
+      />{
         !contact_selected
           ? <div>
             <h1>El contacto seleccionado no existe</h1>
@@ -40,10 +62,16 @@ export default function ContactScreen() {
               </div>
             </div>
 
+
+
+            <div className='chat-screen'>
               <Messages contact_selected={contact_selected} />
               <NewMessagesForm contact_id={contact_id} />
+            </div>
           </div>
       }
+
+
     </div>
   )
 }

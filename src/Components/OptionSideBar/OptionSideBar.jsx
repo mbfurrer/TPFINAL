@@ -6,28 +6,28 @@ export default function OptionSideBar() {
         <div className='options-sidebar'>
             <div>
                 <button aria-label='Chats'>
-                    <i class="bi bi-chat-left-dots"></i>
+                    <i className="bi bi-chat-left-dots"></i>
                 </button>
                 <button aria-label='Status'>
-                    <i class="bi bi-chat-quote"></i>
+                    <i className="bi bi-chat-quote"></i>
                 </button>
                 <button aria-label='Channel'>
-                    <i class="bi bi-chat-text"></i>
+                    <i className="bi bi-chat-text"></i>
                 </button>
                 <button aria-label='Communities'>
-                    <i class="bi bi-people"></i>
+                    <i className="bi bi-people"></i>
                 </button>
             </div>
 
             <div>
                 <button aria-label='Media'>
-                    <i class="bi bi-film"></i>
+                    <i className="bi bi-film"></i>
                 </button>
                 <button aria-label='Settings'>
-                    <i class="bi bi-gear"></i>
+                    <i className="bi bi-gear"></i>
                 </button>
                 <button aria-label='Profile'>
-                    <i class="bi bi-person-circle"></i>
+                    <i className="bi bi-person-circle"></i>
                 </button>
             </div>
         </div>

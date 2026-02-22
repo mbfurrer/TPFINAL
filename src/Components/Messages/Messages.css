@@ -4,6 +4,7 @@
     flex-direction: column;
     border-left: 1px solid var(--wp-ichs-95);
     width: 100%;
+    flex: 1; 
 }
 
 .messages-container {
@@ -26,13 +27,6 @@
     white-space: pre-wrap;
 }
 
-.message span {
-    font-size: 11px;
-    color: var(--wp-ichs-300);
-    align-self: flex-end;
-    margin-top: 5px;
-}
-
 .mine {
     background-color: var(--wp-green-200);
     align-self: flex-end;
@@ -42,3 +36,18 @@
     background-color: var(--wpbg-100);
     align-self: flex-start;
 }
+
+.time{
+    font-size: 11px;
+    color: var(--wp-ichs-300);
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+.sender-name {
+    font-weight: bold;
+    color: var(--wp-ichs-500);
+    align-self: flex-start;
+    padding-bottom: 2px;
+}
+

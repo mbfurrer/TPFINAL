@@ -6,12 +6,25 @@ const Messages = ({ contact_selected }) => {
     <div className='message-sidebar-container'>
       {
         contact_selected.messages.map(message => {
+
+          const isMine = message.send_by_me
+          const isGroup = contact_selected.type === "group"
+
           return (
-            <div className='messages-container'>
-              <div key={message.id}
-                className={`message ${message.send_by_me ? "mine" : "other"}`}>
+            <div key={message.id}
+              className='messages-container'>
+
+              <div
+                className={`message ${isMine ? "mine" : "other"}`}>
+
+                {isGroup && !isMine && (
+                  <span className="sender-name">
+                    {message.send_by}
+                  </span>
+                )}
+
                 <p>{message.text}</p>
-                <span>{message.created_at}</span>
+                <span className="time">{message.created_at}</span>
               </div>
             </div>
           )
