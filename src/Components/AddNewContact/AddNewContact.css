@@ -17,6 +17,10 @@
     font-weight: 400;
 }
 
+.top-row-addc button:hover {
+    cursor: pointer;
+}
+
 .add-contact-form {
     display: flex;
     flex-direction: column;
@@ -36,13 +40,8 @@
     font-size: 14px;
     color: var(--wp-ichs-200);
     margin-bottom: 6px;
-
 }
 
-i:hover {
-    cursor: default;
-    color: inherit;
-}
 
 .input-group input,
 .input-group select {

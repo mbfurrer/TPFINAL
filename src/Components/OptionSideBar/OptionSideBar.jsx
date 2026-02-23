@@ -1,7 +1,10 @@
 import React from 'react'
 import "./OptionSideBar.css"
+import ProfileInfo from '../ProfileInfo/ProfileInfo'
+
 
 export default function OptionSideBar() {
+
     return (
         <div className='options-sidebar'>
             <div>
@@ -26,7 +29,9 @@ export default function OptionSideBar() {
                 <button title='Settings'>
                     <i className="bi bi-gear"></i>
                 </button>
-                <button title='Profile'>
+                <button 
+                onClick={() => ProfileInfo()}
+                title='Profile'>
                     <i className="bi bi-person-circle"></i>
                 </button>
             </div>

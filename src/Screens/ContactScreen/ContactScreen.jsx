@@ -42,6 +42,8 @@ export default function ContactScreen() {
         <OptionSideBar />
       </div>
 
+    
+
       <ContactSideBar
         chats={filteredChats}
         filter={filter}

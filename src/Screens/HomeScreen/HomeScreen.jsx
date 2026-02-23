@@ -18,7 +18,7 @@ export default function HomeScreen() {
       <div>
         <OptionSideBar />
       </div>
-
+    
       <div>
         <ContactSideBar
         chats={chats}      

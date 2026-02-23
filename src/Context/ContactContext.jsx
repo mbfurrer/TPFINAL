@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import { getContacts } from "../services/contactService";
+import { getProfileInfo } from "../services/profileService";
 
 export const ContactContext = createContext(
     {
@@ -11,6 +12,8 @@ export const ContactContext = createContext(
 const ContactContextProvider = ({ children }) => {
     const contacts = getContacts()
     const [contactState, setContactState] = useState(contacts)
+
+    const profileData = getProfileInfo()
 
 
     function addNewMessage(contact_id, new_message) {
@@ -35,31 +38,32 @@ const ContactContextProvider = ({ children }) => {
     }
 
     function addNewContact(contactData) {
-    setContactState((currentContactState) => {
-        const lastId = currentContactState.length > 0
-        ? currentContactState[currentContactState.length - 1].id
-        : 0
+        setContactState((currentContactState) => {
+            const lastId = currentContactState.length > 0
+                ? currentContactState[currentContactState.length - 1].id
+                : 0
 
-        const newContact = 
-        {
-            id: lastId + 1,
-            phone: contactData.phone,
-            type: contactData.type,
-            name: contactData.name,
-            favorite: contactData.is_favorite ?? false,
-            profile_picture: "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2558760599.jpg",
-            messages: []
-        }
+            const newContact =
+            {
+                id: lastId + 1,
+                phone: contactData.phone,
+                type: contactData.type,
+                name: contactData.name,
+                favorite: contactData.is_favorite ?? false,
+                profile_picture: "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2558760599.jpg",
+                messages: []
+            }
 
-        return [...currentContactState, newContact]
-    })
-}
+            return [...currentContactState, newContact]
+        })
+    }
 
     const provider_values = {
         contacts: contactState,
+        profileData,
         addNewMessage,
         addNewContact,
-        }
+    }
 
     return (
         <ContactContext.Provider
