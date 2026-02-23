@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Messages.css'
 
 const Messages = ({ contact_selected }) => {
+
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    containerRef.current?.scrollTo({
+      top: containerRef.current.scrollHeight,
+      behavior: "smooth"
+    })
+  }, [contact_selected.messages.length])
+
+
+
   return (
     <div className='message-sidebar-container'>
-      {
-        contact_selected.messages.map(message => {
 
-          const isMine = message.send_by_me
-          const isGroup = contact_selected.type === "group"
+      <div
+        ref={containerRef}
+        className='messages-container'>
 
-          return (
-            <div key={message.id}
-              className='messages-container'>
+        {
+          contact_selected.messages.map(message => {
 
-              <div
-                className={`message ${isMine ? "mine" : "other"}`}>
+            const isMine = message.send_by_me
+            const isGroup = contact_selected.type === "group"
 
+            return (
+              <div key={message.id}
+                className={`message ${isMine ? "mine" : "other"}`}
+              >
                 {isGroup && !isMine && (
                   <span className="sender-name">
                     {message.send_by}
@@ -25,10 +39,9 @@ const Messages = ({ contact_selected }) => {
 
                 <p>{message.text}</p>
                 <span className="time">{message.created_at}</span>
-              </div>
-            </div>
-          )
-        })}
+              </div>)
+          })}            
+          </div>
     </div>
   )
 }

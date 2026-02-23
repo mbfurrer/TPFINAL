@@ -1,31 +1,49 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './NewMessageForm.css'
 import { ContactContext } from '../../Context/ContactContext'
 
-const NewMessagesForm = ({contact_id}) => {
+const NewMessagesForm = ({ contact_id }) => {
 
-    const {addNewMessage} = useContext(ContactContext)
+    const { addNewMessage } = useContext(ContactContext)
+    const [message, setMessage] = useState("")
 
-    function handleSubmitNewMessage(event){
+    function handleSubmitNewMessage(event) {
         event.preventDefault()
-        const new_message = event.target.nuevo_mensaje.value
-        addNewMessage(contact_id, new_message)
+
+        const trimmed = message.trim()
+        if (!trimmed) return
+
+
+
+        addNewMessage(contact_id, trimmed)
+        setMessage("")
     }
 
     return (
         <div className='chat-area'>
-        <form onSubmit={handleSubmitNewMessage} className="chat-input">
-            <div className="input-wrapper">
-            <label htmlFor='nuevo-mensaje'></label>
-            <textarea 
-            placeholder="Escribe un mensaje..." 
-            id='nuevo_mensaje' name='nuevo_mensaje' rows={1} />
-            <button type='submit'>
-                <i className="bi bi-send-fill"></i>
-            </button>
-            </div>
-        </form>
-        </div>
+            <form onSubmit={handleSubmitNewMessage} className="chat-input">
+                <div className="input-wrapper">
+                    <label htmlFor='nuevo-mensaje'></label>
+                    <textarea
+                        placeholder="Escribe un mensaje..."
+                        id='nuevo_mensaje'
+                        value={message}
+                        name='nuevo_mensaje'
+                        rows={1}
+                        onChange={(e) => setMessage(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" && !e.shiftKey) {
+                                e.preventDefault()
+                                handleSubmitNewMessage(e)
+                            }
+                        }}
+                    />
+                    < button type='submit' >
+                        <i className="bi bi-send-fill"></i>
+                    </button>
+                </div>
+            </form >
+        </div >
     )
 }
 

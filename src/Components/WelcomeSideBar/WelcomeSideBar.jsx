@@ -1,7 +1,7 @@
 import React from 'react'
 import "./WelcomeSideBar.css"
 
-export default function WelcomeSideBar() {
+export default function WelcomeSideBar({onAddNewContact}) {
     return (
         <div className='welcome-container'>
             <div className='download-card'>
@@ -20,7 +20,9 @@ export default function WelcomeSideBar() {
                     <i className="bi bi-file-earmark-text"></i>
                     <span>Send document</span>
                 </button>
-                <button className='quick-actions-btn'>
+                <button 
+                className='quick-actions-btn'
+                onClick={onAddNewContact}>
                     <i className="bi bi-person-plus"></i>
                     <span>Add contact</span>
                 </button>
@@ -28,3 +30,4 @@ export default function WelcomeSideBar() {
         </div>
     )
 }
+

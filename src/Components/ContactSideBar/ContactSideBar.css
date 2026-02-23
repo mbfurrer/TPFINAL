@@ -2,7 +2,6 @@
     display: flex;
     overflow-y: auto;
     flex-direction: column;
-    overflow-y: auto;
 }
 
 .logo-container {

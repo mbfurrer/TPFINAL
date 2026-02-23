@@ -2,6 +2,7 @@
 const contacts = [
     {
         id: 1,
+        phone: "1162783212",
         type: "ind",
         name: "Mama",
         favorite: true,
@@ -33,6 +34,7 @@ const contacts = [
     },
     {
         id: 2,
+        phone: "1163783212",
         type: "ind",
         name: 'Juan UTN',
         favorite: false,
@@ -64,6 +66,7 @@ const contacts = [
     }, 
     {
         id: 3,
+        phone: "11333212",
         type: "ind",
         name: 'Cata',
         favorite: true,
@@ -109,6 +112,7 @@ const contacts = [
     },
     {
         id: 4,
+        phone: "11833212",
         type: "ind",
         name: 'Santi',
         favorite: true,
@@ -154,6 +158,7 @@ const contacts = [
     },
     {
         id: 5,
+        phone: "1183673412",
         type: "ind",
         name: 'Flor',
         favorite: false,
@@ -192,6 +197,7 @@ const contacts = [
     },
     {
         id: 6,
+        phone: "11830712",
         type: "ind",
         name: 'May',
         favorite: true,
@@ -230,6 +236,7 @@ const contacts = [
     },
     {
         id: 7,
+        phone: "11830712 , 11833212, 1147467585",
         type: "group",
         name: "Los Bros",
         favorite: true,
@@ -273,6 +280,7 @@ const contacts = [
     },
     {
         id: 8,
+        phone: "1183673412 , 1162783212",
         type: "group",
         name: "Familia",
         favorite: false,
