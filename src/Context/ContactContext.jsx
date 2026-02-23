@@ -1,6 +1,5 @@
 import { useState, createContext } from "react";
-import { getContacts } from "../services/contactService";
-import { getProfileInfo } from "../services/profileService";
+import { getContacts, getProfileInfo } from "../services/contactService";
 
 export const ContactContext = createContext(
     {
@@ -13,7 +12,7 @@ const ContactContextProvider = ({ children }) => {
     const contacts = getContacts()
     const [contactState, setContactState] = useState(contacts)
 
-    const profileData = getProfileInfo()
+    const profile = getProfileInfo()
 
 
     function addNewMessage(contact_id, new_message) {
@@ -60,7 +59,7 @@ const ContactContextProvider = ({ children }) => {
 
     const provider_values = {
         contacts: contactState,
-        profileData,
+        profile,
         addNewMessage,
         addNewContact,
     }

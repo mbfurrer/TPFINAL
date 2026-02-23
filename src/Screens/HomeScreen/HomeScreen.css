@@ -1,8 +1,7 @@
 .home-containter {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 

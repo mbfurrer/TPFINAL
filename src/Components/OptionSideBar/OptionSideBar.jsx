@@ -1,6 +1,6 @@
 import React from 'react'
 import "./OptionSideBar.css"
-import ProfileInfo from '../ProfileInfo/ProfileInfo'
+import { Link } from 'react-router';
 
 
 export default function OptionSideBar() {
@@ -8,9 +8,11 @@ export default function OptionSideBar() {
     return (
         <div className='options-sidebar'>
             <div>
+                <Link to="/">
                 <button title='Chats'>
                     <i className="bi bi-chat-left-dots"></i>
                 </button>
+                </Link>
                 <button title='Status'>
                     <i className="bi bi-chat-quote"></i>
                 </button>
@@ -29,11 +31,12 @@ export default function OptionSideBar() {
                 <button title='Settings'>
                     <i className="bi bi-gear"></i>
                 </button>
-                <button 
-                onClick={() => ProfileInfo()}
-                title='Profile'>
-                    <i className="bi bi-person-circle"></i>
-                </button>
+                <Link to="/profile"> 
+                    <button
+                        title='Profile'>
+                        <i className="bi bi-person-circle"></i>
+                    </button>
+                </Link>
             </div>
         </div>
     )

@@ -8,10 +8,11 @@ export default function ProfileScreen() {
 
     const { profile } = useContext(ContactContext)
 
-
     return (
-        <div className='home-containter'>
-            <div>
+
+
+        <div className='profile-screen-containter'>
+            <div className='option-sidebar-cont'>
                 <OptionSideBar />
             </div>
 
@@ -31,18 +32,16 @@ export default function ProfileScreen() {
                         <h3>{profile.name}</h3>
 
                         <p className="profile-status">
-                            {profile.status}
+                            Status: {profile.status}
                         </p>
 
                         <div className="profile-info">
-                            <span className="label">Teléfono</span>
+                            <span className="label">Phone</span>
                             <p>{profile.phone}</p>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }
