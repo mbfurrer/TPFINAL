@@ -17,7 +17,7 @@ function ContactInfo({ contact, onClose }) {
           className="close-btn">
             <i className="bi bi-x-lg"></i>
           </button>
-          <h2>Contact info</h2>
+          <h2>Contact info:</h2>
         </div>
 
         <div className="info-content">
