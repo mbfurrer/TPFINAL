@@ -38,17 +38,16 @@ export default function ContactScreen() {
 
   return (
     <div className='contact-message-container'>
-      <div>
-        <OptionSideBar />
-      </div>
-
-    
-
+      
+      <div className='option-contact-section'>
+      <OptionSideBar />
       <ContactSideBar
         chats={filteredChats}
         filter={filter}
         setFilter={setFilter}
       />
+      </div>
+
 
       {!contact_selected
         ? <div>
@@ -77,6 +76,8 @@ export default function ContactScreen() {
                     </span>
                   </div>
                 </div>
+
+
 
                 <div className='chat-screen'>
                   <Messages contact_selected={contact_selected} />

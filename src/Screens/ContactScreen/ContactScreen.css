@@ -2,18 +2,17 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
+    overflow-y: auto;
     overflow: hidden;
 }
 
 .message-sidebar {
     background-color: var(--wpbg-200);
-    flex: 1;
+    flex: 6;
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    border-left: 1px solid var(--wp-ichs-95);
     position: relative;
 }
 
@@ -61,6 +60,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }

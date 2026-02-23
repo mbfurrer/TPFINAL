@@ -2,7 +2,21 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    height: 100vh
+    height: 100vh;
+    width: 100vw;
+    overflow-x: auto;
 }
 
+.option-contact-section{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border-right: 1px solid var(--wp-ichs-95);
+    height: auto;
+}
 
+.message-welcome-cont{
+    min-width: 500px;
+    flex: 6;
+    height: auto;
+}

@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    width: 80px;
+    width: 70px;
     gap: 25px;
     height: 100%;
 }
@@ -37,4 +37,10 @@ i {
 
 i:hover {
     color: var(--wp-ichs-500);
+}
+
+.opt-profile-avatar{
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
 }

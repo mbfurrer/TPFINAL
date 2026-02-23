@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import "./OptionSideBar.css"
 import { Link } from 'react-router';
-
+import { ContactContext } from '../../Context/ContactContext'
 
 export default function OptionSideBar() {
+
+    const { profile } = useContext(ContactContext)
+
 
     return (
         <div className='options-sidebar'>
@@ -32,10 +35,13 @@ export default function OptionSideBar() {
                     <i className="bi bi-gear"></i>
                 </button>
                 <Link to="/profile"> 
-                    <button
+                    <button 
                         title='Profile'>
-                        <i className="bi bi-person-circle"></i>
-                    </button>
+                            <img className='opt-profile-avatar'
+                            src={profile.profile_picture}
+                            alt="profile"
+                        />
+                        </button>
                 </Link>
             </div>
         </div>
