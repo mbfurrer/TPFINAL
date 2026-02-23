@@ -16,7 +16,9 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
     <div className='contact-sidebar-column'>
 
       <div className='logo-container'>
+        <Link to="/">
         <h1>WhatsApp</h1>
+        </Link>        
 
         <div className='logo-container-options'>
           <button> <i className="bi bi-chat-left"></i> </button>

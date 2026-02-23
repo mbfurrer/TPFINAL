@@ -6,8 +6,3 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contact-sidebar {
-    background-color: var(--wpbg-100);
-    flex: 1;
-    height: 100vh;
-}

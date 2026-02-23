@@ -19,7 +19,7 @@ export default function HomeScreen() {
         <OptionSideBar />
       </div>
 
-      <div className='contact-sidebar'>
+      <div>
         <ContactSideBar
         chats={chats}      
         filter="all"
