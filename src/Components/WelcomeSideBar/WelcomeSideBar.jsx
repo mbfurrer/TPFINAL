@@ -1,5 +1,5 @@
 import React from 'react'
-import "./WelcomeSideBar.css"
+import "./WelcomeSidebar.css"
 
 export default function WelcomeSideBar({onAddNewContact}) {
     return (
