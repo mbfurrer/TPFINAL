@@ -1,6 +1,7 @@
 import React from 'react'
 import "./ContactInfo.css"
 
+
 function ContactInfo({ contact, onClose }) {
   return (
     <div className="contact-info-page"
