@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { ContactContext } from '../../Context/ContactContext'
-import "./addNewContact.css"
+import "./AddNewContact.css"
 
 const NewContactForm = ({ onCancel }) => {
 
