@@ -5,6 +5,12 @@
     height: 100vh;
 }
 
+.logofilter-section{
+    position: sticky;
+    top: 0;
+    background-color: var(--wpbg-100);
+}
+
 .logo-container {
     padding: 10px;
     display: flex;
