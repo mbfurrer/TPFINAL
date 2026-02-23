@@ -26,12 +26,12 @@
 
 .options-sidebar button:hover {
     background-color: var(--wp-ichs-95);
+    cursor: pointer;
 }
 
 i {
     font-size: 22px;
     color: var(--wp-ichs-200);
-    cursor: pointer;
     transition: 0.2s ease;
 }
 

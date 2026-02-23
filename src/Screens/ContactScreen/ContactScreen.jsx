@@ -6,6 +6,7 @@ import './ContactScreen.css'
 import NewMessagesForm from '../../Components/NewMessageForm/NewMessageForm'
 import Messages from '..//../Components/Messages/Messages'
 import OptionSideBar from '../../Components/OptionSideBar/OptionSideBar'
+import ContactInfo from '../../Components/ContactInfo/ContactInfo'
 
 export default function ContactScreen() {
   const { contacts } = useContext(ContactContext)
@@ -24,10 +25,15 @@ export default function ContactScreen() {
 
   } else if (filter === "favorites") {
     filteredChats = chats.filter(chats => chats.favorite)
-  
+
   } else if (filter === "groups") {
     filteredChats = chats.filter(chat => chat.type === "group")
   }
+
+  const [showContactInfo, setShowContactInfo] = React.useState(false)
+  React.useEffect(() => {
+  setShowContactInfo(false)
+}, [contact_selected])
 
 
   return (
@@ -37,38 +43,46 @@ export default function ContactScreen() {
       </div>
 
       <ContactSideBar
-        chats={filteredChats} 
+        chats={filteredChats}
         filter={filter}
         setFilter={setFilter}
-      />{
-        !contact_selected
-          ? <div>
-            <h1>El contacto seleccionado no existe</h1>
-          </div>
+      />
 
-          : <div className='message-sidebar'>
+      {!contact_selected
+        ? <div>
+          <h1>El contacto seleccionado no existe</h1>
+        </div>
+        : <div className='message-sidebar'>
 
-            <div className='message-header'>
-              <img
-                className='avatar'
-                src={contact_selected.profile_picture}
-                alt={contact_selected.name} />
+          {showContactInfo
+            ? (<ContactInfo
+              contact={contact_selected}
+              onClose={() => setShowContactInfo(false)} />)
+            : (
+              <>
+                <div className='message-header'>
+                  <button onClick={() => setShowContactInfo(true)}>
+                    <img
+                      className='avatar'
+                      src={contact_selected.profile_picture}
+                      alt={contact_selected.name} />
+                  </button>
 
-              <div className="header-info">
-                <h1>{contact_selected.name}</h1>
-                <span className="last-seen">
-                  {contact_selected.last_time_connection}
-                </span>
-              </div>
-            </div>
-            <div className='chat-screen'>
-              <Messages contact_selected={contact_selected} />
-              <NewMessagesForm contact_id={contact_id} />
-            </div>
-          </div>
-      }
+                  <div className="header-info">
+                    <h1>{contact_selected.name}</h1>
+                    <span className="last-seen">
+                      {contact_selected.last_time_connection}
+                    </span>
+                  </div>
+                </div>
 
-
+                <div className='chat-screen'>
+                  <Messages contact_selected={contact_selected} />
+                  <NewMessagesForm contact_id={contact_id} />
+                </div>
+              </>
+            )}
+        </div>}
     </div>
   )
 }
