@@ -17,7 +17,7 @@ function ContactInfo({ contact, onClose }) {
           className="close-btn">
             <i className="bi bi-x-lg"></i>
           </button>
-          <h2>Contact info:</h2>
+          <h2>Info.</h2>
         </div>
 
         <div className="info-content">
@@ -29,13 +29,14 @@ function ContactInfo({ contact, onClose }) {
 
           <h3>{contact.name}</h3>
 
-          <p className="info-status">
-            Last seen: {contact.last_time_connection}
-          </p>
+          <div>
+            <p className="info-phone"> 
+              {contact.phone}</p>
+          </div>
 
-          <div className="info-section">
-            <span className="label">Phone</span>
-            <p>{contact.phone}</p>
+          <div className="info-search">
+            <i class="bi bi-search"></i>
+            <button className="label">Buscar mensajes</button>
           </div>
 
           <div className="info-section">
