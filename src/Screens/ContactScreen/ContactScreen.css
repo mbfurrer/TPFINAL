@@ -1,18 +1,7 @@
 .contact-message-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.cs-message-sidebar {
-    background-color: var(--wpbg-200);
-    flex: 6;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    position: relative;
+    height: 100%;
 }
 
 .cs-message-header {
@@ -55,10 +44,19 @@
     margin-top: 2px;
 }
 
-.chat-screen {
+.messages-area-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    background-color: var(--wpbg-200);
     height: 100%;
+    justify-content: space-between;
+}
+.messages-area{
+    display: flex;
+    flex: 1;
+}
+.chat-area {
+    position: sticky;
+    bottom: 0;
     width: 100%;
 }

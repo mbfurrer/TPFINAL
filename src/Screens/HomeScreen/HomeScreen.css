@@ -3,22 +3,22 @@
     flex-direction: row;
     position: relative;
     overflow-x: auto;
-}
-
-.home-option-section{
-    display: flex;
-    width: 70px;
     height: 100vh;
 }
 
-.home-contact-section{
+.home-option-section {
+    display: flex;
+    width: 70px;
+}
+
+.home-contact-section {
     display: flex;
     width: 100%;
     flex: 1;
+    min-width: 400px;
 }
-.home-message-welcome-cont{
+
+.home-message-welcome-cont {
     min-width: 500px;
-    height: auto;
-    width: 80%;
-    flex: 3;
+    flex: 6;
 }

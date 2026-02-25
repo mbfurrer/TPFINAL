@@ -51,3 +51,7 @@ a:active {
     --wp-ichs-600: black;
 
 }
+
+html, body {
+  height: 100%;
+}

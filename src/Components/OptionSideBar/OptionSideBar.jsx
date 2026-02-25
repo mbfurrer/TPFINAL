@@ -3,7 +3,7 @@ import "./OptionSideBar.css"
 import { Link } from 'react-router';
 import { ContactContext } from '../../Context/ContactContext'
 
-export default function OptionSideBar({onContactSideBar}) {
+export default function OptionSideBar({onOpenProfile, onOpenContacts}) {
 
     const { profile } = useContext(ContactContext)
 

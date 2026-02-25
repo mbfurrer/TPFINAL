@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import ContactSideBar from '../../Components/ContactSideBar/ContactSideBar'
 import { useParams } from 'react-router'
 import { ContactContext } from '../../Context/ContactContext'
@@ -7,6 +7,8 @@ import NewMessagesForm from '../../Components/NewMessageForm/NewMessageForm'
 import Messages from '..//../Components/Messages/Messages'
 import OptionSideBar from '../../Components/OptionSideBar/OptionSideBar'
 import ContactInfo from '../../Components/ContactInfo/ContactInfo'
+import ProfileScreen from '../../Components/ProfileScreen/ProfileScreen'
+
 
 export default function ContactScreen() {
   const { contacts } = useContext(ContactContext)
@@ -27,33 +29,37 @@ export default function ContactScreen() {
     filteredChats = chats.filter(chat => chat.type === "group")
   }
 
-  const [showContactInfo, setShowContactInfo] = React.useState(false)
-  React.useEffect(() => {
-  setShowContactInfo(false)
-}, [contact_selected])
+  const [showContactInfo, setShowContactInfo] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
 
 
   return (
     <div className='contact-message-container'>
-      
+
       <div className='home-option-section'>
-      <OptionSideBar />
+        <OptionSideBar
+          onOpenProfile={() => setShowProfile(true)}
+          onOpenContacts={() => setShowProfile(false)} />
       </div>
+
 
       <div className='home-contact-section'>
-      <ContactSideBar
-        chats={filteredChats}
-        filter={filter}
-        setFilter={setFilter}
-      />
+        {showProfile
+          ? <ProfileScreen />
+          : <ContactSideBar
+            chats={filteredChats}
+            filter={filter}
+            setFilter={setFilter}
+          />}
       </div>
-
 
       {!contact_selected
         ? <div>
           <h1>El contacto seleccionado no existe</h1>
         </div>
-        : <div className='cs-message-sidebar'>
+        : <div
+          key={contact_selected.id}
+          className='home-message-welcome-cont'>
 
           {showContactInfo
             ? (<ContactInfo
@@ -77,15 +83,19 @@ export default function ContactScreen() {
                   </div>
                 </div>
 
-
-
-                <div className='chat-screen'>
-                  <Messages contact_selected={contact_selected} />
-                  <NewMessagesForm contact_id={contact_id} />
+                <div className='messages-area-container'>
+                <div className='messages-area'>
+                <Messages contact_selected={contact_selected} />
+                <div className='chat-area'>
+                <NewMessagesForm contact_id={contact_id}/>
                 </div>
-              </>
+                </div>
+                
+              </div>
+
+        </>
             )}
-        </div>}
-    </div>
+    </div>}
+    </div >
   )
 }

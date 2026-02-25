@@ -3,6 +3,7 @@ import { ContactContext } from '../../Context/ContactContext'
 import { Link } from 'react-router'
 import './ContactSideBar.css'
 
+
 export default function ContactSideBar({ chats = [], filter, setFilter }) {
 
   const [searchTerm, setSearchTerm] = useState("")
@@ -11,7 +12,10 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
   )
 
 
+
   return (
+
+    
 
     <div className='contact-sidebar-column'>
 
@@ -63,55 +67,54 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
         </div>
       </div>
 
+      <div className='displayed-chats-bar'>{
+        displayedChats.map(
+          (chat) => {
 
+            const lastMessage =
+              chat.messages[chat.messages.length - 1];
 
-        <div>{
-          displayedChats.map(
-            (chat) => {
+            const unreadCount =
+              chat.messages.filter(
+                msg => !msg.is_read && !msg.send_by_me
+              ).length;
 
-              const lastMessage =
-                chat.messages[chat.messages.length - 1];
+            return (
+              <Link
+                to={`/contact/${chat.id}`}
+                key={chat.id}>
+                <div className='contact-card'>
+                  <img
+                    src={chat.profile_picture}
+                    alt={chat.name}
+                    className="avatar"
+                  />
+                  <div className="contact-info">
+                    <div className="top-row">
+                      <h3 className={`contact-name ${unreadCount > 0 ? "unread" : ""}`}>
+                        {chat.name}
+                      </h3>
+                      <span className="time">{chat.last_time_connection}</span>
+                    </div>
 
-              const unreadCount =
-                chat.messages.filter(
-                  msg => !msg.is_read && !msg.send_by_me
-                ).length;
+                    <div className="bottom-row">
+                      <p>
+                        {lastMessage?.send_by_me ? "Tú: " : ""}
+                        {lastMessage?.text}
+                      </p>
 
-              return (
-                <Link
-                  to={`/contact/${chat.id}`}
-                  key={chat.id}>
-                  <div className='contact-card'>
-                    <img
-                      src={chat.profile_picture}
-                      alt={chat.name}
-                      className="avatar"
-                    />
-                    <div className="contact-info">
-                      <div className="top-row">
-                        <h3 className={`contact-name ${unreadCount > 0 ? "unread" : ""}`}>
-                          {chat.name}
-                        </h3>
-                        <span className="time">{chat.last_time_connection}</span>
-                      </div>
-
-                      <div className="bottom-row">
-                        <p>
-                          {lastMessage?.send_by_me ? "Tú: " : ""}
-                          {lastMessage?.text}
-                        </p>
-
-                        {unreadCount > 0 &&
-                          <span className="unread-count">
-                            {unreadCount}
-                          </span>
-                        }
-                      </div>
+                      {unreadCount > 0 &&
+                        <span className="unread-count">
+                          {unreadCount}
+                        </span>
+                      }
                     </div>
                   </div>
-                </Link>
-              )
-            })}
-        </div>
+                </div>
+              </Link>
+            )
+          })}
       </div>
-      )}
+    </div>
+  )
+}

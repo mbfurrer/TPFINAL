@@ -1,20 +1,15 @@
 .message-sidebar-container {
-    background-color: var(--wpbg-200);
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    overflow-y: auto;
 }
 
-.messages-container{
+.messages-container {
     display: flex;
     flex-direction: column;
     padding: 20px;
     justify-content: space-between;
-    height: 100%;
+    flex: 1;
     gap: 20px;
     overflow-y: auto;
-    margin-bottom: 40px;
 }
 
 .message {
