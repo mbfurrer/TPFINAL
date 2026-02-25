@@ -36,7 +36,6 @@ export default function HomeScreen() {
         }
       </div>
 
-
       <div className='home-message-welcome-cont'>
         {showNewContact
           ? <AddNewContact onCancel={() => setShowNewContact(false)} />

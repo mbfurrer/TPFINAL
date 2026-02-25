@@ -83,19 +83,19 @@ export default function ContactScreen() {
                   </div>
                 </div>
 
-                <div className='messages-area-container'>
-                <div className='messages-area'>
-                <Messages contact_selected={contact_selected} />
-                <div className='chat-area'>
-                <NewMessagesForm contact_id={contact_id}/>
-                </div>
-                </div>
                 
-              </div>
+                  <div className='messages-area-container'>
+                    <div className='messages-scroll-area'>
+                    <Messages contact_selected={contact_selected} />
+                    <div className='chat-area'>
+                      <NewMessagesForm contact_id={contact_id} />
+                    </div>
+                    </div>
+                  </div>
 
-        </>
+              </>
             )}
-    </div>}
+        </div>}
     </div >
   )
 }

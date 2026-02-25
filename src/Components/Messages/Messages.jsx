@@ -2,16 +2,14 @@ import React, { useEffect, useRef } from 'react'
 import './Messages.css'
 
 const Messages = ({ contact_selected }) => {
+const containerRef = useRef(null) 
 
-  const containerRef = useRef(null)
-
-  useEffect(() => {
+useEffect(() => {
     containerRef.current?.scrollTo({
       top: containerRef.current.scrollHeight,
       behavior: "smooth"
     })
   }, [contact_selected.messages.length])
-
 
 
   return (
