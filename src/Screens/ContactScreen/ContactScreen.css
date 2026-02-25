@@ -5,7 +5,7 @@
 
 .option-contact-section {
     display: flex;
-    height: 100vh;
+    flex: 1;
 }
 
 .profile-active {

@@ -33,7 +33,7 @@ export default function ProfileScreen() {
             </div>
 
             <div className='profile-empty-space'>
-                <i class="bi bi-person-circle"></i>
+                <i className="bi bi-person-circle"></i>
                 <h1>Profile</h1>
             </div>
         </div>
