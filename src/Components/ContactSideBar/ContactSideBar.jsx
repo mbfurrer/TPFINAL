@@ -16,7 +16,6 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
   return (
 
     
-
     <div className='contact-sidebar-column'>
 
       <div className='logofilter-section'>

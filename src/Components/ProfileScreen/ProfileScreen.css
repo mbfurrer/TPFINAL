@@ -1,16 +1,31 @@
 
-.profile-page {
+.profile-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-column {
     display: flex;
     overflow-y: auto;
-    height: 100vh;
     flex-direction: column;
     background-color: var(--wpbg-100);
     border-right: 1px solid var(--wp-ichs-95);
     align-items: start;
     gap: 30px;
-    width: 100%;
     padding: 0 20px;
+    animation: slideFromLeft 0.45s ease forwards;
+}
 
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .profile-page h2 {
@@ -37,4 +52,15 @@
     color: var(--wp-ichs-500);
     font-weight: 400;
     margin: 15px 0;
+}
+
+.profile-empty-space{
+    background-color: var(--wpbg-200);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-empty-space h1{
+
 }

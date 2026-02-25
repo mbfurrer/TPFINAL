@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import "./OptionSideBar.css"
-import { Link } from 'react-router';
 import { ContactContext } from '../../Context/ContactContext'
 
 export default function OptionSideBar({onOpenProfile, onOpenContacts}) {
 
     const { profile } = useContext(ContactContext)
-
 
     return (
         <div className='options-sidebar'>

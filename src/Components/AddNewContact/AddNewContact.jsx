@@ -58,7 +58,8 @@ const NewContactForm = ({ onCancel }) => {
 
                 <div className="input-group">
                 <label>
-                    <i class="bi bi-telephone-fill"></i>                    <input
+                    <i class="bi bi-telephone-fill"></i>                    
+                    <input
                         type="text"
                         placeholder="Phone"
                         value={phone}

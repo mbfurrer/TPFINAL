@@ -1,11 +1,11 @@
 
 .chat-input {
     padding: 10px 16px;
-    width: 100%;
 }
 
 .input-wrapper {
-    position: relative;
+    position: sticky;
+    bottom: 0;
     width: 100%;
     border-radius: 25px;
     border-radius: 25px;

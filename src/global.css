@@ -30,6 +30,12 @@ a:active {
     outline: none;
 }
 
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex
+}
+
 :root {
     --wpbg-100: #ffffff;
     --wpbg-200: #f7f5f2;
@@ -51,4 +57,3 @@ a:active {
     --wp-ichs-600: black;
 
 }
-

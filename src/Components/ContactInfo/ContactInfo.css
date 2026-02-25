@@ -1,17 +1,14 @@
 .contact-info-page {
-    flex: 1;
-    height: 100vh;
-    width: 30%;
     min-width: 400px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     background: var(--wpbg-100);
     align-self: flex-end;
+    width: 100%;
 }
 
 .contact-info-panel {
-    height: 100%;
     display: flex;
     flex-direction: column;
     animation: slideFromTop 0.45s ease forwards;
@@ -43,7 +40,6 @@
     font-size: 18px;
     cursor: pointer;
 }
-
 
 .info-content {
     display: flex;

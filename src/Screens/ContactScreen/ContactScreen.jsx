@@ -8,17 +8,23 @@ import Messages from '..//../Components/Messages/Messages'
 import OptionSideBar from '../../Components/OptionSideBar/OptionSideBar'
 import ContactInfo from '../../Components/ContactInfo/ContactInfo'
 import ProfileScreen from '../../Components/ProfileScreen/ProfileScreen'
-
+import ContactHeader from '../../Components/ContactHeader/ContactHeader'
+import WelcomeSideBar from '../../Components/WelcomeSideBar/WelcomeSideBar'
 
 export default function ContactScreen() {
   const { contacts } = useContext(ContactContext)
   const { contact_id } = useParams()
-  const contact_selected = contacts.find(contact => Number(contact.id) === Number(contact_id))
+  const contact_selected = contacts.find(
+    contact => Number(contact.id) === Number(contact_id))
+
+  const [filter, setFilter] = useState("all")
+  const [showProfile, setShowProfile] = useState(false)
+  const [activeView, setActiveView] = useState("welcome")
+
 
   const chats = [...contacts]
-
-  const [filter, setFilter] = React.useState("all")
   let filteredChats = chats
+
   if (filter === "unread") {
     filteredChats = chats.filter(chat =>
       chat.messages.some(msg => !msg.is_read && !msg.send_by_me)
@@ -29,73 +35,61 @@ export default function ContactScreen() {
     filteredChats = chats.filter(chat => chat.type === "group")
   }
 
-  const [showContactInfo, setShowContactInfo] = useState(false)
-  const [showProfile, setShowProfile] = useState(false)
+  const currentView =
+    contact_selected
+      ? activeView === "welcome"
+        ? "chat"
+        : activeView
+      : "welcome"
 
 
   return (
-    <div className='contact-message-container'>
+    <div className='home-containter'>
 
-      <div className='home-option-section'>
-        <OptionSideBar
-          onOpenProfile={() => setShowProfile(true)}
-          onOpenContacts={() => setShowProfile(false)} />
-      </div>
+      <div className='option-contact-section'>
+          <OptionSideBar
+            onOpenProfile={() => setShowProfile(true)}
+            onOpenContacts={() => setShowProfile(false)} />
 
-
-      <div className='home-contact-section'>
         {showProfile
-          ? <ProfileScreen />
-          : <ContactSideBar
-            chats={filteredChats}
-            filter={filter}
-            setFilter={setFilter}
-          />}
-      </div>
+          ? (<div className='profile-active'>
+            <ProfileScreen />
+          </div>)
 
-      {!contact_selected
-        ? <div>
-          <h1>El contacto seleccionado no existe</h1>
-        </div>
-        : <div
-          key={contact_selected.id}
-          className='home-message-welcome-cont'>
+          : (<>
+              <div className='contactsidebar-active'>
+                <ContactSideBar
+                  chats={filteredChats}
+                  filter={filter}
+                  setFilter={setFilter}/>
+              </div>
 
-          {showContactInfo
-            ? (<ContactInfo
-              contact={contact_selected}
-              onClose={() => setShowContactInfo(false)} />)
-            : (
-              <>
-                <div className='cs-message-header'>
-                  <button onClick={() => setShowContactInfo(true)}>
-                    <img
-                      className='avatar'
-                      src={contact_selected.profile_picture}
-                      alt={contact_selected.name} />
-                  </button>
+      <div className='home-message-welcome-cont'>
+        {currentView === "welcome" && (
+          <><WelcomeSideBar onAddNewContact={() => setActiveView("contact-info")}/></>
+        )}
 
-                  <div className="cs-header-info">
-                    <h1>{contact_selected.name}</h1>
-                    <span className="last-seen">
-                      {contact_selected.last_time_connection}
-                    </span>
-                  </div>
-                </div>
+        {currentView === "chat" && contact_selected && (
+          <>
+            <ContactHeader
+              onShowContactInfo={() => setActiveView("contact-info")}
+            />
+            <div className='messages-scroll-area'>
+              <Messages contact_selected={contact_selected} />
+            </div>
+            <NewMessagesForm contact_id={contact_id} />
+          </>
+        )}
 
-                
-                  <div className='messages-area-container'>
-                    <div className='messages-scroll-area'>
-                    <Messages contact_selected={contact_selected} />
-                    <div className='chat-area'>
-                      <NewMessagesForm contact_id={contact_id} />
-                    </div>
-                    </div>
-                  </div>
-
-              </>
+        {currentView === "contact-info" && contact_selected && (
+          <ContactInfo
+            contact={contact_selected}
+            onClose={() => setActiveView("chat")}
+          />
             )}
-        </div>}
-    </div >
-  )
-}
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+)}

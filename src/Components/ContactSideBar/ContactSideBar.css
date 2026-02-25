@@ -4,11 +4,10 @@
     flex-direction: column;
     border-right: 1px solid var(--wp-ichs-95);
     padding: 0 10px;
-    width: 100%;
+    height: 100vh;
 }
 
 .displayed-chats-bar {
-    height: 100%;
     overflow-y: auto;
 }
 

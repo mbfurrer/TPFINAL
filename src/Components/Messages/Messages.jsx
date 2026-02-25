@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import './Messages.css'
+import NewMessagesForm from '../../Components/NewMessageForm/NewMessageForm'
 
 const Messages = ({ contact_selected }) => {
 const containerRef = useRef(null) 
@@ -13,8 +14,8 @@ useEffect(() => {
 
 
   return (
-    <div className='message-sidebar-container'>
 
+    <div className='message-sidebar-container'>
       <div
         ref={containerRef}
         className='messages-container'>
@@ -40,6 +41,7 @@ useEffect(() => {
               </div>)
           })}            
           </div>
+
     </div>
   )
 }
