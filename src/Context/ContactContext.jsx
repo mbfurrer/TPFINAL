@@ -52,7 +52,6 @@ const ContactContextProvider = ({ children }) => {
                 profile_picture: "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2558760599.jpg",
                 messages: []
             }
-
             return [...currentContactState, newContact]
         })
     }

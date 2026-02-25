@@ -3,6 +3,8 @@
     overflow-y: auto;
     flex-direction: column;
     height: 100vh;
+    border-right: 1px solid var(--wp-ichs-95);
+    padding: 0 20px;
 }
 
 .logofilter-section{
@@ -22,7 +24,6 @@
     font-size: 22px;
     font-weight: 600;
     color: var(--wp-green-400);
-    margin: 0;
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
@@ -110,13 +111,6 @@
     background-color: var(--wp-green-200);
 }
 
-.contact-sidebar-column {
-    margin-left: 10px;
-    margin-right: 10px;
-    gap: 10px;
-    background-color: var(--color-primario-100);
-}
-
 img {
     width: '200px'
 }
@@ -132,13 +126,6 @@ img {
 
 .contact-card:hover {
     background-color: var(--wp-ichs-95);
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
 .contact-info {

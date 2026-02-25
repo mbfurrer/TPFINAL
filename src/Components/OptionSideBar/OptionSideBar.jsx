@@ -3,7 +3,7 @@ import "./OptionSideBar.css"
 import { Link } from 'react-router';
 import { ContactContext } from '../../Context/ContactContext'
 
-export default function OptionSideBar() {
+export default function OptionSideBar({onContactSideBar}) {
 
     const { profile } = useContext(ContactContext)
 
@@ -11,11 +11,10 @@ export default function OptionSideBar() {
     return (
         <div className='options-sidebar'>
             <div>
-                <Link to="/">
-                <button title='Chats'>
+                <button onClick={onOpenContacts}
+                title='Chats'>
                     <i className="bi bi-chat-left-dots"></i>
                 </button>
-                </Link>
                 <button title='Status'>
                     <i className="bi bi-chat-quote"></i>
                 </button>
@@ -34,15 +33,14 @@ export default function OptionSideBar() {
                 <button title='Settings'>
                     <i className="bi bi-gear"></i>
                 </button>
-                <Link to="/profile"> 
-                    <button 
+
+                    <button onClick={onOpenProfile}
                         title='Profile'>
                             <img className='opt-profile-avatar'
                             src={profile.profile_picture}
                             alt="profile"
                         />
                         </button>
-                </Link>
             </div>
         </div>
     )

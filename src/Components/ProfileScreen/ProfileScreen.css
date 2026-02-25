@@ -1,0 +1,41 @@
+.profile-screen-containter{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--wpbg-200);
+}
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--wpbg-100);
+    border-right: 1px solid var(--wp-ichs-95);
+    align-items: start;
+    gap: 30px;
+    padding: 10px 30px;
+}
+
+.profile-page h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 50px;
+}
+
+.profile-page span{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--wp-ichs-200);
+}
+
+.profile-page p {
+    font-size: 15px;
+    color: var(--wp-ichs-500);
+    font-weight: 400;
+    margin: 15px 0 ;
+}

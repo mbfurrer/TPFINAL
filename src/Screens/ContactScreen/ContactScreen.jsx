@@ -17,15 +17,12 @@ export default function ContactScreen() {
 
   const [filter, setFilter] = React.useState("all")
   let filteredChats = chats
-
   if (filter === "unread") {
     filteredChats = chats.filter(chat =>
       chat.messages.some(msg => !msg.is_read && !msg.send_by_me)
     )
-
   } else if (filter === "favorites") {
     filteredChats = chats.filter(chats => chats.favorite)
-
   } else if (filter === "groups") {
     filteredChats = chats.filter(chat => chat.type === "group")
   }
@@ -39,8 +36,11 @@ export default function ContactScreen() {
   return (
     <div className='contact-message-container'>
       
-      <div className='option-contact-section'>
+      <div className='home-option-section'>
       <OptionSideBar />
+      </div>
+
+      <div className='home-contact-section'>
       <ContactSideBar
         chats={filteredChats}
         filter={filter}
@@ -53,7 +53,7 @@ export default function ContactScreen() {
         ? <div>
           <h1>El contacto seleccionado no existe</h1>
         </div>
-        : <div className='message-sidebar'>
+        : <div className='cs-message-sidebar'>
 
           {showContactInfo
             ? (<ContactInfo
@@ -61,7 +61,7 @@ export default function ContactScreen() {
               onClose={() => setShowContactInfo(false)} />)
             : (
               <>
-                <div className='message-header'>
+                <div className='cs-message-header'>
                   <button onClick={() => setShowContactInfo(true)}>
                     <img
                       className='avatar'
@@ -69,7 +69,7 @@ export default function ContactScreen() {
                       alt={contact_selected.name} />
                   </button>
 
-                  <div className="header-info">
+                  <div className="cs-header-info">
                     <h1>{contact_selected.name}</h1>
                     <span className="last-seen">
                       {contact_selected.last_time_connection}
