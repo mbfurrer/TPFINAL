@@ -1,11 +1,14 @@
 import { useContext } from 'react'
 import { useParams } from 'react-router'
 import { ContactContext } from '../../Context/ContactContext'
+import { useNavigate } from "react-router";
+import "./ContactHeader.css"
 
 
 export default function ContactHeader({ onShowContactInfo }) {
   const { contacts } = useContext(ContactContext)
   const { contact_id } = useParams()
+  const navigate = useNavigate();
   const contact_selected = contacts.find(
     contact => Number(contact.id) === Number(contact_id)
   )
@@ -13,6 +16,12 @@ export default function ContactHeader({ onShowContactInfo }) {
 
   return (
     <div className='cs-message-header'>
+
+      <button className='mobile-back-btn'
+      onClick={() => navigate("/")}>
+        <i className="bi bi-arrow-left"></i>
+      </button>
+
       <button onClick={onShowContactInfo}>
         <img
           className='avatar'

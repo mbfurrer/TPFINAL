@@ -15,9 +15,11 @@ function ContactInfo({ contact, onClose }) {
           <button
             onClick={onClose}
             className="close-btn">
-            <i className="bi bi-x-lg"></i>
+            <i className="bi bi-x-lg close-btn-desktop"></i>
+            <i class="bi bi-arrow-left close-btn-mobile"></i>
           </button>
-          <h2>Info.</h2>
+
+          <h2>Contact info.</h2>
         </div>
 
         <div className="info-content">

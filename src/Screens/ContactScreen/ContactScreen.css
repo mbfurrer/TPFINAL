@@ -71,7 +71,7 @@
     margin-top: 2px;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width: 768px){
 
     .home-containter {
@@ -83,12 +83,10 @@
         height: 100vh;
     }
 
-    /* Ocultamos la barra lateral izquierda */
     .options-sidebar {
         display: none;
     }
 
-    /* Sidebar ocupa todo el ancho */
     .contactsidebar-active {
         width: 100%;
         height: 100%;
@@ -98,12 +96,10 @@
         width: 100%;
         height: 100%;
     }
-    /* 👉 Si hay chat abierto ocultamos sidebar */
     .chat-open .contactsidebar-active {
         display: none;
     }
 
-    /* 👉 Si NO hay chat abierto ocultamos chat */
     .home-containter:not(.chat-open) .home-message-welcome-cont {
         display: none;
     }

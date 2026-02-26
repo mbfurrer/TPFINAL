@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.close-btn-mobile{
+    display: none
+}
+
 .info-content {
     display: flex;
     padding: 24px;
@@ -143,6 +147,26 @@
 }
 
 .block-report,
-.block-report i{
+.block-report i {
     color: red;
+}
+
+@media (max-width: 768px) {
+
+    .contact-info-page {
+        align-self: center;
+        width: 100%;
+    }
+
+    .info-header {
+        align-items: center;
+        padding: 20px;
+    }
+    .close-btn-desktop{
+        display: none
+    }
+
+    .close-btn-mobile{
+        display: flex;
+    }
 }

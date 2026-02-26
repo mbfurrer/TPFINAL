@@ -25,14 +25,17 @@ export default function ContactScreen() {
   const [showProfile, setShowProfile] = useState(false)
   const [activeView, setActiveView] = useState("welcome")
 
-    const currentView =
-    activeView === "add-contact"
-      ? "add-contact"
-      : activeView === "contact-info"
-        ? "contact-info"
-        : contact_selected
-          ? "chat"
-          : "welcome"
+  let currentView;
+
+if (activeView === "add-contact") {
+  currentView = "add-contact";
+} else if (activeView === "contact-info") {
+  currentView = "contact-info";
+} else if (contact_selected) {
+  currentView = "chat";
+} else {
+  currentView = "welcome";
+}
 
   const chats = [...contacts]
   let filteredChats = chats
