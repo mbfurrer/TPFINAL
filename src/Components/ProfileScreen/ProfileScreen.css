@@ -12,7 +12,7 @@
     flex-direction: column;
     background-color: var(--wpbg-100);
     border-right: 1px solid var(--wp-ichs-95);
-    align-items: start;
+    align-items: center;
     gap: 30px;
     padding: 0 20px;
     animation: slideFromLeft 0.45s ease forwards;
@@ -32,9 +32,14 @@
     }
 }
 
-.profile-page h2 {
-    font-size: 35px;
-    font-weight: 600;
+.profile-title{
+    padding: 30px;
+}
+
+.profile-title h2{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center
 }
 
 .profile-avatar {
@@ -42,21 +47,37 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 50px;
+    margin: 40px;
+    margin-bottom: 0;
 }
 
-.profile-page span {
-    font-size: 15px;
-    font-weight: 500;
+.profile-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    padding: 20px;
+    gap: 30px;
+}
+
+.profile-data-card{
+    gap: 20px;
+}
+
+.profile-data-card span {
+    font-size: 20px;
+    font-weight: 600;
     color: var(--wp-ichs-200);
 }
 
-.profile-page p {
-    font-size: 15px;
+.profile-data-card p {
+    font-size: 18px;
     color: var(--wp-ichs-500);
     font-weight: 400;
     margin: 15px 0;
 }
+
+
 
 .profile-empty-space{
     flex: 1;
@@ -67,6 +88,11 @@
     background-color: var(--wpbg-200);
 }
 
-.profile-empty-space h1{
- color: aquamarine;
+.profile-empty-space h1 {
+ font-size: 45px;
+ font-weight: 500;
+}
+
+.profile-empty-space i {
+ font-size: 45px;
 }

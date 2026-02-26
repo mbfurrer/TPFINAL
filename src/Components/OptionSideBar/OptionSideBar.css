@@ -44,3 +44,8 @@ i:hover {
     width: 28px;
     border-radius: 50%;
 }
+
+@media (max-width: 768px){
+    .options-sidebar {
+    display: none;
+}}

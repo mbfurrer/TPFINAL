@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react"
 import { ContactContext } from '../../Context/ContactContext'
 import "./AddNewContact.css"
 
-const NewContactForm = ({ onCancel }) => {
+const NewContactForm = ({ onClose }) => {
 
     const { addNewContact } = useContext(ContactContext)
 
@@ -35,7 +35,7 @@ const NewContactForm = ({ onCancel }) => {
             
             <div className="top-row-addc">
             <h2>New contact</h2>
-            <button type="button" onClick={onCancel}>
+            <button type="button" onClick={onClose}>
                 <i class="bi bi-x-lg"></i>
             </button>
             </div>

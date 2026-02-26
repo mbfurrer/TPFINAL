@@ -1,6 +1,7 @@
 import React from 'react'
 import "./WelcomeSidebar.css"
 
+
 export default function WelcomeSideBar({onAddNewContact}) {
     return (
         <div className='welcome-container'>
