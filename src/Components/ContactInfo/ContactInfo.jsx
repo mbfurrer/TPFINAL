@@ -15,7 +15,7 @@ function ContactInfo({ contact, onClose }) {
           <button
             onClick={onClose}
             className="close-btn">
-            <i className="bi bi-x-lg close-btn-desktop"></i>
+            <i className="bi bi-x-lg close-btn-desktop "></i>
             <i class="bi bi-arrow-left close-btn-mobile"></i>
           </button>
 

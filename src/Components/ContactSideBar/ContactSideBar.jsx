@@ -1,32 +1,37 @@
-import React, { useContext, useState } from 'react'
-import { ContactContext } from '../../Context/ContactContext'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { Link } from 'react-router'
 import './ContactSideBar.css'
+import DropMenu from '../../Components/DropMenu/DropMenu'
 
 
-export default function ContactSideBar({ chats = [], filter, setFilter }) {
-
+export default function ContactSideBar({ chats = [], filter, setFilter, setActiveView }) {
+  const navigate = useNavigate()
   const [searchTerm, setSearchTerm] = useState("")
   const displayedChats = chats.filter(chat =>
     chat.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
 
-
   return (
 
-    
+
     <div className='contact-sidebar-column'>
 
       <div className='logofilter-section'>
         <div className='logo-container'>
-          <Link to="/">
-            <h1>WhatsApp</h1>
-          </Link>
+          
+            
+            <h1 className='desktop-logo'>WhatsApp</h1>
+
 
           <div className='logo-container-options'>
-            <button> <i className="bi bi-chat-left"></i> </button>
-            <button> <i className="bi bi-three-dots-vertical"></i> </button>
+            <button className='menu-logo-btn '>
+              <i className="bi bi-chat-left"></i> </button>
+            <DropMenu
+              onAddNewContact={() => setActiveView("add-contact")}
+              onOpenProfile={() => setActiveView("profile")}
+            />
           </div>
         </div>
 
@@ -79,15 +84,19 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
               ).length;
 
             return (
-              <Link
-                to={`/contact/${chat.id}`}
-                key={chat.id}>
-                <div className='contact-card'>
+              <div
+                key={chat.id}
+                className='contact-card'
+                onClick={() => {
+                  navigate(`/contact/${chat.id}`)
+                  setActiveView("chat")
+                }}>
                   <img
                     src={chat.profile_picture}
                     alt={chat.name}
                     className="avatar"
                   />
+
                   <div className="contact-info">
                     <div className="top-row">
                       <h3 className={`contact-name ${unreadCount > 0 ? "unread" : ""}`}>
@@ -110,7 +119,6 @@ export default function ContactSideBar({ chats = [], filter, setFilter }) {
                     </div>
                   </div>
                 </div>
-              </Link>
             )
           })}
       </div>

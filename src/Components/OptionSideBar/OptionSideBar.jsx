@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import "./OptionSideBar.css"
 import { ContactContext } from '../../Context/ContactContext'
+import "./OptionSideBar.css"
 
 export default function OptionSideBar({onOpenProfile, onOpenContacts}) {
 

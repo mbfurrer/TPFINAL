@@ -3,7 +3,7 @@ import './ProfileScreen.css'
 import { ContactContext } from '../../Context/ContactContext'
 
 
-export default function ProfileScreen() {
+export default function ProfileScreen({onClose}) {
 
     const { profile } = useContext(ContactContext)
 
@@ -12,16 +12,17 @@ export default function ProfileScreen() {
             <div className="profile-column">
 
                 <div className='profile-title'>
+
+                    <button onClick={onClose}
+                    className='profile-back-btn'>
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
                     <h2>Profile</h2>
-
-
-                    <div>
-                        <img
-                            src={profile.profile_picture}
-                            alt={profile.name}
-                            className="profile-avatar"
-                        />
-                    </div>
+                    <img
+                        src={profile.profile_picture}
+                        alt={profile.name}
+                        className="profile-avatar"
+                    />
                 </div>
 
                 <div className='profile-data'>
@@ -44,7 +45,7 @@ export default function ProfileScreen() {
             </div>
 
             <div className='profile-empty-space'>
-                <i className=" bi bi-person-circle" profile-icon ></i>
+                <i className=" bi bi-person-circle"></i>
                 <h1>Profile</h1>
             </div>
         </div>

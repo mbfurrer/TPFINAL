@@ -11,6 +11,7 @@
     border-radius: 25px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     background: var(--wpbg-100);
+    position: relative;
 }
 
 .input-wrapper textarea {
@@ -18,7 +19,7 @@
     resize: none;
     border: none;
     outline: none;
-    padding: 12px 55px 12px 15px;
+    padding: 12px 55px 12px 45px;
     border-radius: 25px;
     font-size: 15px;
     background: transparent;
@@ -38,6 +39,23 @@
     justify-content: center;
     cursor: pointer;
     transition: 0.2s ease;
+}
+
+.emoji-btn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.emoji-picker-container {
+    position: absolute;
+    bottom: 60px; 
+    left: 0;
+    z-index: 999;
 }
 
 .chat-input button:hover {

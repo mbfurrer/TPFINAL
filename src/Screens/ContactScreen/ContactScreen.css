@@ -16,7 +16,7 @@
 .contactsidebar-active {
     display: flex;
     flex-shrink: 0;
-} 
+}
 
 .home-message-welcome-cont {
     flex: 1;
@@ -72,15 +72,16 @@
 }
 
 /* MOBILE */
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .home-containter {
+        .home-containter {
         flex-direction: column;
+        overflow: hidden;
     }
 
     .option-contact-section {
         flex-direction: column;
-        height: 100vh;
+        height: 100%;
     }
 
     .options-sidebar {
@@ -88,7 +89,6 @@
     }
 
     .contactsidebar-active {
-        width: 100%;
         height: 100%;
     }
 
@@ -96,12 +96,33 @@
         width: 100%;
         height: 100%;
     }
-    .chat-open .contactsidebar-active {
+
+    /* 👇 CONTROL POR activeView */
+
+    /* Cuando estamos en welcome → solo sidebar */
+    .view-welcome .home-message-welcome-cont {
         display: none;
     }
 
-    .home-containter:not(.chat-open) .home-message-welcome-cont {
+    
+
+    /* Cuando estamos en chat */
+    .view-chat .contactsidebar-active {
+        display: none;
+    }
+
+    /* Cuando estamos agregando contacto */
+    .view-add-contact .contactsidebar-active {
+        display: none;
+    }
+
+    /* Cuando estamos viendo info */
+    .view-contact-info .contactsidebar-active {
         display: none;
     }
 
 }
+
+
+
+

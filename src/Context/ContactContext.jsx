@@ -11,7 +11,6 @@ export const ContactContext = createContext(
 const ContactContextProvider = ({ children }) => {
     const contacts = getContacts()
     const [contactState, setContactState] = useState(contacts)
-    const [selectedContact, setSelectedContact] = useState(null)
     const profile = getProfileInfo()
 
     function addNewMessage(contact_id, new_message) {

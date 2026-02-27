@@ -1,8 +1,7 @@
-
-.profile-page{
+.profile-page {
     display: flex;
     flex-direction: row;
-    flex: 1;        
+    flex: 1;
     width: 100%;
 }
 
@@ -14,9 +13,8 @@
     border-right: 1px solid var(--wp-ichs-95);
     align-items: center;
     gap: 30px;
-    padding: 0 20px;
     animation: slideFromLeft 0.45s ease forwards;
-    flex: 0 0 400px;  
+    flex: 0 0 400px;
     overflow-y: auto;
 }
 
@@ -32,14 +30,38 @@
     }
 }
 
-.profile-title{
-    padding: 30px;
+.profile-title {
+    position: relative;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 15px;
 }
 
-.profile-title h2{
+.profile-title h2 {
     font-size: 30px;
     font-weight: 500;
-    text-align: center
+    text-align: center;
+}
+
+.profile-title img {
+    align-self: center;
+}
+
+.profile-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
 }
 
 .profile-avatar {
@@ -56,11 +78,11 @@
     flex-direction: column;
     width: 100%;
     align-items: start;
-    padding: 20px;
+    padding: 30px;
     gap: 30px;
 }
 
-.profile-data-card{
+.profile-data-card {
     gap: 20px;
 }
 
@@ -77,22 +99,26 @@
     margin: 15px 0;
 }
 
-
-
-.profile-empty-space{
-    flex: 1;
+.profile-empty-space {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--wpbg-200);
+    width: 600px;
 }
 
 .profile-empty-space h1 {
- font-size: 45px;
- font-weight: 500;
+    font-size: 45px;
+    font-weight: 500;
 }
 
 .profile-empty-space i {
- font-size: 45px;
+    font-size: 45px;
+}
+
+@media (max-width: 768px) {
+    .profile-back-btn {
+    display: flex;
+    }
 }

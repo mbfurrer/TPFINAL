@@ -36,7 +36,7 @@ const NewContactForm = ({ onClose }) => {
             <div className="top-row-addc">
             <h2>New contact</h2>
             <button type="button" onClick={onClose}>
-                <i class="bi bi-x-lg"></i>
+                <i className="bi bi-x-lg"></i>
             </button>
             </div>
 

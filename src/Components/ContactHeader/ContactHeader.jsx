@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import "./ContactHeader.css"
 
 
-export default function ContactHeader({ onShowContactInfo }) {
+export default function ContactHeader({ onShowContactInfo, onClose }) {
   const { contacts } = useContext(ContactContext)
   const { contact_id } = useParams()
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function ContactHeader({ onShowContactInfo }) {
     <div className='cs-message-header'>
 
       <button className='mobile-back-btn'
-      onClick={() => navigate("/")}>
+      onClick={onClose}>
         <i className="bi bi-arrow-left"></i>
       </button>
 
