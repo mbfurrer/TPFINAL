@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { ContactContext } from '../../Context/ContactContext'
 import NewMessagesForm from '../../Components/NewMessageForm/NewMessageForm'
@@ -10,10 +10,11 @@ import ContactHeader from '../../Components/ContactHeader/ContactHeader'
 import WelcomeSideBar from '../../Components/WelcomeSideBar/WelcomeSideBar'
 import AddNewContact from '../../Components/AddNewContact/AddNewContact'
 import ContactSideBar from '../../Components/ContactSideBar/ContactSideBar'
+import LoadingScreen from '../../Components/LoadingScreen/LoadingScreen'
 import './ContactScreen.css'
 
 
-export default function ContactScreen() {
+export default function ContactScreen({ onLogout }) {
   const { contacts } = useContext(ContactContext)
   const { contact_id } = useParams()
 
@@ -22,6 +23,17 @@ export default function ContactScreen() {
 
   const [filter, setFilter] = useState("all")
   const [activeView, setActiveView] = useState("welcome")
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   let currentView;
 
@@ -36,6 +48,8 @@ export default function ContactScreen() {
   } else {
     currentView = "welcome";
   }
+
+
 
 
   const chats = [...contacts]
@@ -60,13 +74,14 @@ export default function ContactScreen() {
 
         <div className='contactsidebar-active'>
           {activeView === "profile" ? (
-            <ProfileScreen onClose={() => setActiveView("welcome")} />
+            <ProfileScreen onClose={() => setActiveView("welcome")}/>
           ) : (
             <ContactSideBar
               chats={filteredChats}
               filter={filter}
               setFilter={setFilter}
               setActiveView={setActiveView}
+              onLogout={onLogout}
             />
           )}
         </div>
@@ -91,7 +106,7 @@ export default function ContactScreen() {
               <ContactHeader
                 onShowContactInfo={() => setActiveView("contact-info")}
                 onClose={() => {
-                                    setActiveView("welcome")
+                  setActiveView("welcome")
                 }}
               />
               <div className='messages-scroll-area'>

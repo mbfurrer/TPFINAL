@@ -7,8 +7,8 @@ export default function WelcomeSideBar({onAddNewContact}) {
         <div className='welcome-container'>
             <div className='download-card'>
                 <i className="bi bi-cloud-download"></i>
-                <h1>Download WhatsApp for Windows</h1>
-                <span>Make calls, share your screen and get a faster experience when you download the Windows app.</span>
+                <h1>Download WhatsApp</h1>
+                <span>Make calls, share your screen and get a faster experience when you download the app.</span>
                 <a href="https://www.whatsapp.com/download"
                     target="_blank"
                     className="download-btn">

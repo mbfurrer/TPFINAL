@@ -44,10 +44,17 @@ const NewMessagesForm = ({ contact_id }) => {
             <div className="emoji-picker-container">
               <EmojiPicker
                 onEmojiClick={onEmojiClick}
-                height={350}
+                previewConfig={{ showPreview: false }}
+                skinTonesDisabled
+                searchDisabled
               />
             </div>
           )}
+
+          < button type='submit'
+            className='send-btn'>
+            <i className="bi bi-send-fill"></i>
+          </button>
 
           <textarea
             placeholder="Escribe un mensaje..."
@@ -63,9 +70,7 @@ const NewMessagesForm = ({ contact_id }) => {
               }
             }}
           />
-          < button type='submit' >
-            <i className="bi bi-send-fill"></i>
-          </button>
+
         </div>
       </form >
     </div >

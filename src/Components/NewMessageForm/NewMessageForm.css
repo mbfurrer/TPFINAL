@@ -25,43 +25,55 @@
     background: transparent;
 }
 
-.input-wrapper button {
+.input-wrapper i {
+    font-size: 16px;
+}
+
+.send-btn{
     position: absolute;
-    right: 8px;
-    bottom: 6px;
+    right: 5px;
+    bottom: 5px;
+    border: none;
+    cursor: pointer;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: none;
     color: var(--wpbg-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
     transition: 0.2s ease;
+}
+
+.send-btn:hover{
+    background: var(--wp-green-400);
 }
 
 .emoji-btn {
     position: absolute;
-    left: 10px;
-    bottom: 10px;
-    background: transparent;
+    left: 5px;
+    bottom: 5px;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--wpbg-100);
+    transition: 0.2s ease;
+}
+
+.emoji-btn:hover{
+    background: var(--wpbg-200);
 }
 
 .emoji-picker-container {
     position: absolute;
-    bottom: 60px; 
+    bottom: 50px; 
     left: 0;
     z-index: 999;
+    width: 300px;
+    height: 250px;
 }
 
-.chat-input button:hover {
-    background-color: var(--wp-green-400);
+.emoji-picker-container aside {
+    width: 100% !important;
+    height: 100% !important;
 }
 
-.input-wrapper i {
-    font-size: 16px;
-}

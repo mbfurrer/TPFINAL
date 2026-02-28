@@ -5,7 +5,7 @@ import './ContactSideBar.css'
 import DropMenu from '../../Components/DropMenu/DropMenu'
 
 
-export default function ContactSideBar({ chats = [], filter, setFilter, setActiveView }) {
+export default function ContactSideBar({ chats = [], filter, setFilter, setActiveView, onLogout }) {
   const navigate = useNavigate()
   const [searchTerm, setSearchTerm] = useState("")
   const displayedChats = chats.filter(chat =>
@@ -31,6 +31,7 @@ export default function ContactSideBar({ chats = [], filter, setFilter, setActiv
             <DropMenu
               onAddNewContact={() => setActiveView("add-contact")}
               onOpenProfile={() => setActiveView("profile")}
+              onLogout={onLogout}
             />
           </div>
         </div>
