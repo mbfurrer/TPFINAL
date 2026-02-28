@@ -8,7 +8,7 @@
     padding: 10px 16px;
     background-color: var(--wpbg-100);
     border-bottom: 1px solid var(--wp-ichs-90);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px var(--wp-ichs-500);
     height: 70px;
 }
 
@@ -37,7 +37,7 @@
 
 .last-seen {
     font-size: 13px;
-    color: #667781;
+    color: var(--wp-ichs-300);
     margin-top: 2px;
 }
 

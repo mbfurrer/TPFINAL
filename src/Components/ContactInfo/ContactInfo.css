@@ -148,7 +148,7 @@
 
 .block-report,
 .block-report i {
-    color: red;
+    color: var(--wp-ichs-900);
 }
 
 @media (max-width: 768px) {

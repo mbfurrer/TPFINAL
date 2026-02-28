@@ -12,7 +12,7 @@
     padding: 40px 50px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px var(--wp-ichs-500);
     max-width: 400px;
     width: 100%;
 }
@@ -30,7 +30,7 @@
 }
 
 .error-card p {
-    color: #667781;
+    color: var( --wp-ichs-300);
     font-size: 15px;
     margin-bottom: 25px;
 }
@@ -40,7 +40,7 @@
     padding: 10px 20px;
     border-radius: 25px;
     background-color: var(--wp-green-400);
-    color: white;
+    color: var(--wpbg-100);
     text-decoration: none;
     font-weight: 500;
     transition: 0.2s ease;
