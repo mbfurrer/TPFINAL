@@ -1,5 +1,5 @@
 .contact-info-page {
-    min-width: 400px;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
